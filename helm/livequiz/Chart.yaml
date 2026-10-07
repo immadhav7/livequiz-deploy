@@ -1,3 +1,5 @@
+# LiveQuiz Helm chart metadata
+apiVersion: v2
 name: livequiz
 description: LiveQuiz quiz application with its MySQL database
 type: application

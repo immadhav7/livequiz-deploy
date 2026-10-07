@@ -1,3 +1,4 @@
+{{/* LiveQuiz template helpers */}}
 {{- define "livequiz.fullname" -}}
 {{- if contains .Chart.Name .Release.Name -}}
 {{- .Release.Name | trunc 63 | trimSuffix "-" -}}

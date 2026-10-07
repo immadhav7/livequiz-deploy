@@ -1,3 +1,4 @@
+# Default values for the LiveQuiz chart (overridden by values-dev.yaml / values-prod.yaml)
 replicaCount: 1
 
 image:
