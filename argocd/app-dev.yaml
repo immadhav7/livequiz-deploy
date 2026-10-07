@@ -1,0 +1,24 @@
+# ArgoCD Application: LiveQuiz dev (automatic sync)
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: livequiz-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/immadhav7/livequiz-deploy.git
+    targetRevision: main
+    path: helm/livequiz
+    helm:
+      valueFiles:
+        - values-dev.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: livequiz-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
