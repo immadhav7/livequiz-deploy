@@ -1,0 +1,7 @@
+replicaCount: 1
+
+image:
+  tag: "4e31993"
+
+ingress:
+  host: dev.livequiz.local

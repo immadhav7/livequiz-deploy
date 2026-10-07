@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  tag: "4e31993"
+
+ingress:
+  host: prod.livequiz.local
+
+database:
+  storage: 5Gi
