@@ -1,0 +1,21 @@
+# ArgoCD Application: LiveQuiz prod (manual sync)
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: livequiz-prod
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/immadhav7/livequiz-deploy.git
+    targetRevision: main
+    path: helm/livequiz
+    helm:
+      valueFiles:
+        - values-prod.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: livequiz-prod
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
