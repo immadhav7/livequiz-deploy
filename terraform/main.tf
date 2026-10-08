@@ -76,6 +76,10 @@ resource "aws_vpc_security_group_egress_rule" "all" {
 }
 
 resource "aws_instance" "k3s" {
+  lifecycle {
+    ignore_changes = [ami]
+  }
+
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
   subnet_id                   = data.aws_subnets.default.ids[0]
