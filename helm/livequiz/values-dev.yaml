@@ -2,7 +2,7 @@
 replicaCount: 1
 
 image:
-  tag: "ea16702"
+  tag: "0e6d15e"
 
 ingress:
   host: dev.livequiz.local
